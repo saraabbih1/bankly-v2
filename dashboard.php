@@ -9,7 +9,6 @@ if(!isset($_SESSION['user_id'])){
 }
 
 // Récupérer les statistiques
-
 // 1. Nombre total de clients
 $stmt = $conn->query("SELECT COUNT(*) as total_clients FROM clients");
 $totalClients = $stmt->fetch(PDO::FETCH_ASSOC)['total_clients'];
@@ -31,14 +30,14 @@ $totalTransactions = $totalTransactions ? $totalTransactions : 0; // éviter nul
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard - Bankly V2</title>
+    <title> Bankly V2</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
 
     <div class="container">
-        <h1>Bienvenue, <?php echo $_SESSION['full_name']; ?>!</h1>
+        <h1>Bienvenue  <?php echo $_SESSION['full_name']; ?>!</h1>
         <h2>Tableau de bord</h2>
 
         <div class="dashboard">

@@ -1,4 +1,3 @@
-/* Réinitialisation de base */
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +5,12 @@
     font-family: Arial, sans-serif;
 }
 
-/* Corps de la page */
+
 body {
     background-color: #f0f2f5;
 }
 
-/* Container général */
+
 .container {
     width: 90%;
     max-width: 1000px;
@@ -19,7 +18,7 @@ body {
     text-align: center;
 }
 
-/* Titre */
+
 h1 {
     margin-bottom: 10px;
     color: #333;
@@ -30,9 +29,9 @@ h2 {
     color: #555;
 }
 
-/* Menu de navigation */
+
 header {
-    background-color: #007bff;
+    background-color: #2D5128;
     padding: 15px 0;
     margin-bottom: 30px;
 }
@@ -54,10 +53,10 @@ header {
 }
 
 .nav-menu li a:hover {
-    background-color: #0056b3;
+    background-color: #2D5128;
 }
 
-/* Dashboard */
+
 .dashboard {
     display: flex;
     justify-content: center;
@@ -65,7 +64,7 @@ header {
     flex-wrap: wrap;
 }
 
-/* Cards */
+
 .dashboard a {
     text-decoration: none;
 }
@@ -88,7 +87,7 @@ header {
 
 .card h3 {
     margin-bottom: 15px;
-    color: #007bff;
+    color: #2D5128;
 }
 
 .card p {
@@ -96,7 +95,7 @@ header {
     font-weight: bold;
 }
 
-/* Footer */
+
 footer {
     text-align: center;
     padding: 20px;

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../config/config.php';
+require '../config/config.php';
 
 $error = '';
 
@@ -40,10 +40,10 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet" href="../assets/css/login.css">
 </head>
 <body>
-    <h2>Connexion</h2> 
+    <h2 class="connexion">Connexion</h2> 
     
     <?php if ($error) echo "<p style='color:red;'>$error</p>"; ?>
-    <form method="POST" action="">
+    <form method="POST" >
         <label>Email:</label>
         <input type="email" name="email" required><br><br>
         <label>Mot de passe:</label>
