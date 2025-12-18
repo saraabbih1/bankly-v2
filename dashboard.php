@@ -2,7 +2,7 @@
 session_start();
 require_once 'config/config.php';
 
-// Vérifier si l'utilisateur est connecté
+
 if(!isset($_SESSION['user_id'])){
     header("Location: auth/login.php");
     exit;

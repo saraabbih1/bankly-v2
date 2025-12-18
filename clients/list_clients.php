@@ -16,7 +16,7 @@ $clients = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
     <title>Liste des clients</title>
-    <link rel="stylesheet" href="../assets/css/clients.css">
+    <link rel="stylesheet" href="../assets/css/listclient.css">
 
 </head>
 <body>
@@ -45,8 +45,8 @@ $clients = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <td><?= $c['cin'] ?></td>
             <td><?= $c['phone'] ?></td>
             <td>
-                <a href="edit_client.php?id=<?= $c['id'] ?>">✏️</a>
-                <a href="delete_client.php?id=<?= $c['id'] ?>" onclick="return confirm('Supprimer ce client ?')">🗑️</a>
+                <a href="edit_client.php?id=<?= $c['id'] ?>">modifier</a>
+                <a href="delete_client.php?id=<?= $c['id'] ?>" onclick="return confirm('Supprimer ce client ?')">supprimer</a>
             </td>
         </tr>
         <?php endforeach; ?>

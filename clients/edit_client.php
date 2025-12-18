@@ -37,7 +37,8 @@ if (isset($_POST['update'])) {
 <html>
 <head>
     <title>Modifier client</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/clients.css">
+
 </head>
 <body>
 
