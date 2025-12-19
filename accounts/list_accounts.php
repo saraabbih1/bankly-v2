@@ -25,7 +25,7 @@ $accounts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Liste des comptes</title>
-    <link rel="stylesheet" href="../assets/css/clients.css">
+    <link rel="stylesheet" href="../assets/css/listclient.css">
 </head>
 <body>
 

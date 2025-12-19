@@ -7,7 +7,6 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-    
 $stmt = $conn->query("SELECT * FROM transactions ORDER BY transaction_date DESC");
 $transactions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -36,14 +35,13 @@ $transactions = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <tr>
         <td><?= $t['id'] ?></td>
         <td><?= $t['account_id'] ?></td>
-
-            
-        <td><?= $t['transaction_type'] ?></td>
-        <td><?= $t['amount'] ?></td>
-        <td><?= $t['transaction_date'] ?></td>
+        <td><?= htmlspecialchars($t['transaction_type']) ?></td>
+        <td><?= number_format($t['amount'], 2, ',', ' ') ?> MAD</td>
+        <td><?= date('d/m/Y H:i', strtotime($t['transaction_date'])) ?></td>
     </tr>
     <?php endforeach; ?>
 </table>
 
+<?php include '../includes/footer.php'; ?>
 </body>
 </html>

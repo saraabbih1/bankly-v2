@@ -10,9 +10,22 @@ if (!isset($_SESSION['user_id'])) {
 
 $stmt = $conn->query("SELECT * FROM clients ORDER BY id DESC");
 $clients = $stmt->fetchAll(PDO::FETCH_ASSOC);
+if (isset($_POST['save'])) {
+    $stmt = $conn->prepare("INSERT INTO clients (full_name, email, cin, phone) VALUES (?, ?, ?, ?)");
+    $stmt->execute([
+        $_POST['full_name'],
+        $_POST['email'],
+        $_POST['cin'],
+        $_POST['phone']
+    ]);
+    header("Location: list_clients.php");   
+    exit;
+}
+
 ?>
 
 <!DOCTYPE html>
+
 <html>
 <head>
     <title>Liste des clients</title>
@@ -25,7 +38,19 @@ $clients = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <div class="container">
     <h2>Liste des clients</h2>
-    <a href="add_client.php" class="btn">+ Ajouter client</a>
+    <a href="#" class="btn-add" onclick="openForm()">+ Ajouter client</a>
+
+<div id="addClientForm" style="display:none; border:1px solid #ccc; padding:20px; margin-top:20px;">
+    <h3>Ajouter un client</h3>
+    <form method="POST">
+        <input type="text" name="full_name" placeholder="Nom complet" required><br><br>
+        <input type="email" name="email" placeholder="Email"><br><br>
+        <input type="text" name="cin" placeholder="CIN"><br><br>
+        <input type="text" name="phone" placeholder="Téléphone"><br><br>
+        <button type="submit" name="save">Enregistrer</button>
+        <button type="button" onclick="closeForm()">Annuler</button>
+    </form>
+</div>
 
     <table>
         <tr>
@@ -54,5 +79,15 @@ $clients = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 <?php include '../includes/footer.php'; ?>
+<script>
+function openForm() {
+    document.getElementById('addClientForm').style.display = 'block';
+}
+
+function closeForm() {
+    document.getElementById('addClientForm').style.display = 'none';
+}
+</script>
+
 </body>
 </html>
