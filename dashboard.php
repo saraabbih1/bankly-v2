@@ -9,15 +9,15 @@ if(!isset($_SESSION['user_id'])){
 }
 
 // Récupérer les statistiques
-// 1. Nombre total de clients
+//  Nombre total de clients
 $stmt = $conn->query("SELECT COUNT(*) as total_clients FROM clients");
 $totalClients = $stmt->fetch(PDO::FETCH_ASSOC)['total_clients'];
 
-// 2. Nombre total de comptes
+//  Nombre total de comptes
 $stmt = $conn->query("SELECT COUNT(*) as total_accounts FROM accounts");
 $totalAccounts = $stmt->fetch(PDO::FETCH_ASSOC)['total_accounts'];
 
-// 3. Total des transactions du jour
+// Total des transactions du jour
 $today = date('Y-m-d');
 $stmt = $conn->prepare("SELECT SUM(amount) as total_transactions FROM transactions WHERE DATE(transaction_date) = :today");
 $stmt->bindParam(':today', $today);

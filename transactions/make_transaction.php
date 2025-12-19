@@ -55,6 +55,7 @@ if (isset($_POST['submit'])) {
     <title>Transaction</title>
 </head>
 <body>
+    
 
 <h2>Dépôt / Retrait</h2>
 
